@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <style>
+        .cont {
+            background-color: black;
+            height: 500px;
+            width: 150px;
+            border: solid black;
+            border-radius: 30px;
+        }
+
+        .circle {
+            height: 100px;
+            width: 100px;
+            background-color: aliceblue;
+            border-radius: 50px;
+            margin-top: 25%;
+            
+        }
+        #t{
+            background-color: antiquewhite;
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+    <script>
+        var r = 0;
+        var y = 0;
+        var g = 0;
+        var p = setInterval(f1, 200)
+        function f1() {
+            if (r < 30) {
+                r++;
+                document.getElementById("red").style.background = "red"
+                document.getElementById("t").innerHTML = r;//used for timer
+                document.getElementById("yellow").style.background = "white"
+                document.getElementById("green").style.background = "white"
+            }
+            else if (y < 30) {
+                y++;
+                document.getElementById("yellow").style.background = "yellow"
+                document.getElementById("t").innerHTML = y;
+                document.getElementById("red").style.background = "white"
+                document.getElementById("green").style.background = "white"
+            }
+            else if (g < 30) {
+                g++;
+                document.getElementById("green").style.background = "green"
+                document.getElementById("t").innerHTML = g;
+                document.getElementById("yellow").style.background = "white"
+                document.getElementById("red").style.background = "white"
+            }
+            else {
+                r = 0;
+                y = 0;
+                g = 0;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <center>
+        <div class="cont">
+            <div id="t"></div>
+            <div class="circle" id="red"></div>
+            <div class="circle" id="yellow"></div>
+            <div class="circle" id="green"></div>
+        </div>
+    </center>
+</body>
+
+</html>
